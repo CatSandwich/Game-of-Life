@@ -37,11 +37,11 @@ namespace Plugin
             ev.Client.SendMessage(ToClient.Ping, new Ping("Ping!"));
         };
 
-        [MessageHandler((ushort) ToServer.Ping, typeof(Ping))]
+        [MessageHandler((ushort)ToServer.Pong, typeof(Ping))]
         private void _pingHandler(IClient client, Ping ping)
         {
             Console.WriteLine($"Pinged - responding Pong! Message: {ping.Message}");
-            client.SendMessage(ToClient.Pong, new Ping("Pong!"));
+            //client.SendMessage(ToClient.Pong, new Ping("Pong!"));
         }
 
         [MessageHandler((ushort)ToServer.CellPlacement, typeof(PregameGrid))]

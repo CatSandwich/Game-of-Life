@@ -2,7 +2,7 @@
   "profiles": {
     "Plugin": {
       "commandName": "Executable",
-      "executablePath": "C:\\Users\\Josh\\Documents\\GitHub\\Game of Life\\Server\\DarkRift\\DarkRift.Server.Console.exe",
+      "executablePath": "$(SolutionDir)\\DarkRift\\DarkRift.Server.Console.exe",
       "workingDirectory": "$(SolutionDir)\\DarkRift"
     }
   }

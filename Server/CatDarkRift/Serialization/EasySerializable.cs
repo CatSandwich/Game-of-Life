@@ -8,7 +8,7 @@ using DarkRift;
 
 namespace CatDarkRift.Serialization
 {
-    public abstract class EasySerializable<TChild> : IDarkRiftSerializable where TChild : EasySerializable<TChild>, new()
+    public abstract class EasySerializable<TChild> : IDarkRiftSerializable where TChild : new()
     {
         private static IEnumerable<SerializedField> Fields => _fields ?? (_fields = _init());
         private static IEnumerable<SerializedField> _fields;
@@ -44,9 +44,8 @@ namespace CatDarkRift.Serialization
 
     internal class SerializedField
     {
-        internal delegate void SerializerDel(DarkRiftWriter writer, object data);
         public FieldInfo Field;
-        public SerializerDel Serializer;
+        public Action<DarkRiftWriter, object> Serializer;
         public Func<DarkRiftReader, object> Deserializer;
     }
 }
